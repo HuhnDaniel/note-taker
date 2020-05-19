@@ -6,3 +6,5 @@ router.get("/notes", function(req, res) {
 }).post("/notes", function(req, res) {
     notesData.push(req.body);
 })
+
+module.exports = router;
