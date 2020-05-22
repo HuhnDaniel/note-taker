@@ -8,12 +8,16 @@ router.get("/notes", (req, res) => {
 })
 // Direct to post api notes
 .post("/notes", (req, res) => {
+    notesData.forEach(note => {
+        note.id++;        
+    });
+
     const newNote = req.body;
-    newNote.id = notesData.length;
+    newNote.id = 0;
     console.log(newNote);
 
     // Move the new note into the notes array then save it to db.json
-    notesData.push(newNote);
+    notesData.unshift(newNote);
 
     fs.writeFile("./db/db.json", JSON.stringify(notesData), err => {
         if (err) throw err;
@@ -21,7 +25,7 @@ router.get("/notes", (req, res) => {
         console.log("File saved");
     });
 
-    res.json(newNote);
+    res.end();
 });
 
 // Direct to delete a specific note
@@ -33,7 +37,7 @@ router.delete("/notes/:id", (req, res) => {
     fs.writeFile("./db/db.json", JSON.stringify(notesData), err => {
         if (err) throw err;
 
-        console.log("File saved");
+        console.log("File deleted");
     });
 
     res.end();
