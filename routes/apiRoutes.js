@@ -13,7 +13,7 @@ router.get("/notes", (req, res) => {
     });
 
     const newNote = req.body;
-    newNote.id = 0;
+    newNote.id = 1;
     console.log(newNote);
 
     // Move the new note into the notes array then save it to db.json
@@ -30,7 +30,7 @@ router.get("/notes", (req, res) => {
 
 // Direct to delete a specific note
 router.delete("/notes/:id", (req, res) => {
-    const chosenId = req.params.id;
+    const chosenId = req.params.id - 1;
 
     notesData.splice(chosenId, 1);
 
