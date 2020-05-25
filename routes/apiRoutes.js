@@ -14,7 +14,6 @@ router.get("/notes", (req, res) => {
 
     const newNote = req.body;
     newNote.id = 1;
-    console.log(newNote);
 
     // Move the new note into the notes array then save it to db.json
     notesData.unshift(newNote);
