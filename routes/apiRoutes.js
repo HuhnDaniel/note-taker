@@ -34,6 +34,10 @@ router.delete("/notes/:id", (req, res) => {
 
     notesData.splice(chosenId, 1);
 
+    for (let i = chosenId; i < notesData.length; i++) {
+        notesData[i].id--;
+    }
+
     fs.writeFile("./db/db.json", JSON.stringify(notesData), err => {
         if (err) throw err;
 
