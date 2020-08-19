@@ -17,6 +17,6 @@ For use by anyone who needs to keep track of things. Take notes for keeping list
 ## Author
 Daniel Moody-Huhn:
 - https://github.com/HuhnDaniel/
-- https://danielmoodyhuhn.herokuapp.com/
+- https://huhndaniel.github.io
 ## Questions
 If you have any questions about the repo, please open an issue and I will attempt to respond to it as soon as possible.
